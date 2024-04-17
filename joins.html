@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joins</title>
+</head>
+<body>
+    <h1 style="font-size: 40px; background-color: rgb(172, 209, 253);">JOINS</h1>
+   <h1>Equi joins</h1>
+   <p>Equi joins in SQL are a specific type of join where the condition for joining tables is based on the equality of values in specified columns. There are two main types of equi joins:</p>
+   <p>Inner Equi Join :</p>
+    <p>An inner equi join returns only the rows that have matching values in both tables based on the specified join condition.</p>
+    <h2>Syntax</h2>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <h2>syntax</h2>
+    <p>SELECT columns FROM table1 LEFT OUTER JOIN table2 ON</p>
+    <p>table1.column_name = table2.column_name;</p>
+    
+    <p>OR</p>
+    <p>SELECT columns FROM table1 RIGHT OUTER JOIN</p>
+    <p>table2 ON table1.column_name = table2.column_name;</p>
+    <p>Example Table : Customers</p>
+    
+
+    <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+     <tr>
+         <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">customerID</th>
+         <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">CustomerName</th>
+         <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">ContactNo</th>
+         <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Country</th>
+     </tr>
+     <tr>
+             <td style="border: 1px solid #000000; padding: 8px; text-align: left;">1</td>
+             <td style="border: 1px solid #000000; padding: 8px; text-align: left;">Muskan</td>
+             <td style="border: 1px solid #000000; padding: 8px; text-align: left;">80041****</td>
+             <td style="border: 1px solid #000000; padding: 8px; text-align: left;">USA</td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">2</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">awaz</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">94041****</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">Germany</td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">3</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">khushiii</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">67041****</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">Germany</td>
+     </tr>
+    </table>
+    <p>Example Table : Orders</p>
+     <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+        <tr>
+            <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Order ID</th>
+            <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Customer id</th>
+            <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Order date</th>
+        </tr>
+        <tr>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">10308</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">2</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">1996-09-18</td>
+        </tr>  
+        <tr>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">10309</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">37</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">1996-09-19</td>
+        </tr>  
+        <tr>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">10310</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">77</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">1996-09-20</td>
+        </tr>    
+    </table>
+    <h2>Query</h2>
+    <p>SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate FROM Orders INNER JOIN</p>
+    <p>Customers ON</p>
+    <p>Orders.customerID=Customers.customerID;</p>
+    <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+        <tr>
+            <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Order ID</th>
+            <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Customer name</th>
+            <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Order date</th>
+        </tr>
+        <tr>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">10308</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">awaz</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">1996-09-18</td>
+        </tr>  
+            </table>
+            <p>SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate FROM Orders LEFT OUTER JOIN</p>
+            <p>Customers ON</p>
+            <p>Orders.customerID=Customers.customerID;</p>
+            <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+                <tr>
+                    <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Order ID</th>
+                    <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Customer name</th>
+                    <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Order date</th>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">10308</td>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">awaz</td>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">1996-09-18</td>
+                </tr>  
+                <tr>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">10309</td>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">NULL</td>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">1996-09-19</td>
+                </tr>  
+                <tr>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">10310</td>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">NULL</td>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">1996-09-20</td>
+                </tr>    
+            </table>
+            <P>SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate FROM Orders RIGHT OUTER JOIN</P>
+            <P>Customers ON</P>
+            <P>Orders.customerID=Customers.customerID;</P>
+            <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+                <tr>
+                    <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Order ID</th>
+                    <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Customer name</th>
+                    <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Order date</th>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">NULL</td>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">Muskan</td>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">NULL</td>
+                </tr>  
+                <tr>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">10308</td>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">awaz</td>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">1996-09-18</td>
+                </tr>  
+                
+                <tr>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">NULL</td>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">Khushii</td>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">NULL</td>
+                </tr>    
+            </table>
+
+            <H1>Cartesian Join</H1>
+            <p>A Cartesian join, also known as a Cartesian product or cross join, is a join operation that returns the Cartesian product of the sets of rows from the joined tables. It means that it produces a result set in which each row from the first table is combined with every row from the second table. This type of join is less common and can result in a large result set, especially when joining tables with a large number of rows. There is essentially only one type of Cartesian join, but it can be performed using different syntax variations:</p>
+            <h2>syntax</h2>
+            <p>SELECT columns FROM table1 CROSS JOIN table2;</p>
+            <p>Example Table : Customers</p>
+    
+
+    <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+     <tr>
+         <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">customerID</th>
+         <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">CustomerName</th>
+         <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">ContactNo</th>
+         <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Country</th>
+     </tr>
+     <tr>
+             <td style="border: 1px solid #000000; padding: 8px; text-align: left;">1</td>
+             <td style="border: 1px solid #000000; padding: 8px; text-align: left;">Muskan</td>
+             <td style="border: 1px solid #000000; padding: 8px; text-align: left;">80041****</td>
+             <td style="border: 1px solid #000000; padding: 8px; text-align: left;">USA</td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">2</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">awaz</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">94041****</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">Germany</td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">3</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">khushiii</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">67041****</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">Germany</td>
+     </tr>
+    </table>
+    <p>Example Table : Orders</p>
+     <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+        <tr>
+            <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Order ID</th>
+            <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Customer id</th>
+            <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Order date</th>
+        </tr>
+        <tr>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">10308</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">2</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">1996-09-18</td>
+        </tr>  
+        <tr>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">10309</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">37</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">1996-09-19</td>
+        </tr>  
+        <tr>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">10310</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">77</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">1996-09-20</td>
+        </tr>    
+    </table>
+    <h2>query</h2>
+    <p>SELECT Customers.CustomerName, Orders.OrderID FROM Customers CROSS JOIN Orders;</p>
+    <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+        <tr>
+            <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Order ID</th>
+            <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Customer name</th>
+            
+        </tr>
+        <tr>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">10310</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">khushiii</td>
+           
+        </tr>
+        <tr>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">10310</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">awaz</td>
+           
+        </tr>
+        <tr>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">10310</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">muskan</td>
+           
+        </tr>    
+        <tr>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">10309</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">khushiii</td>
+           
+        </tr>
+        <tr>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">10309</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">awaz</td>
+           
+        </tr>
+        <tr>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">10309</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">muskan</td>
+           
+        </tr>    
+        <tr>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">10308</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">khushiii</td>
+           
+        </tr>
+        <tr>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">10308</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">awaz</td>
+           
+        </tr>
+        <tr>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">10308</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">muskan</td>
+           
+        </tr>    
+        </table>
+        <h1>Outer Joins</h1>
+        <p>Outer joins in SQL are used to retrieve data from multiple tables while also including unmatched rows from one or both tables in the result set. There are two main types of outer joins:</p>
+        <h4>LEFT OUTER JOIN (or LEFT JOIN) : </h4>
+        <p>A left outer join returns all rows from the left table (the first table mentioned in the query), and the matched rows from the right table. If there are no matching rows in the right table, NULL values are returned for the columns from the right table.</p>
+        <h2>Syntax</h2>
+        <p>SELECT columns FROM table1 LEFT OUTER JOIN table2 ON</p>
+        <p>table1.column_name = table2.column_name;</p>
+        <h4>RIGHT OUTER JOIN (or RIGHT JOIN) :</h4>
+        <p>A right outer join returns all rows from the right table (the second table mentioned in the query), and the matched rows from the left table. If there are no matching rows in the left table, NULL values are returned for the columns from the left table. </p>
+        <h2>syntax</h2>
+        <p>SELECT columns FROM table1 RIGHT OUTER JOIN table2 ON</p>
+        <p>table1.column_name = table2.column_name;</p>
+        <p>Example Table : Customers</p>
+    
+
+        <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+         <tr>
+             <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">customerID</th>
+             <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">CustomerName</th>
+             <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">ContactNo</th>
+             <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Country</th>
+         </tr>
+         <tr>
+                 <td style="border: 1px solid #000000; padding: 8px; text-align: left;">1</td>
+                 <td style="border: 1px solid #000000; padding: 8px; text-align: left;">Muskan</td>
+                 <td style="border: 1px solid #000000; padding: 8px; text-align: left;">80041****</td>
+                 <td style="border: 1px solid #000000; padding: 8px; text-align: left;">USA</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">2</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">awaz</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">94041****</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">Germany</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">3</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">khushiii</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">67041****</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">Germany</td>
+         </tr>
+        </table>
+        <p>Example Table : Orders</p>
+        <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+           <tr>
+               <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Order ID</th>
+               <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Customer id</th>
+               <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Order date</th>
+           </tr>
+           <tr>
+               <td style="border: 1px solid #000000; padding: 8px; text-align: left;">10308</td>
+               <td style="border: 1px solid #000000; padding: 8px; text-align: left;">2</td>
+               <td style="border: 1px solid #000000; padding: 8px; text-align: left;">1996-09-18</td>
+           </tr>  
+           <tr>
+               <td style="border: 1px solid #000000; padding: 8px; text-align: left;">10309</td>
+               <td style="border: 1px solid #000000; padding: 8px; text-align: left;">37</td>
+               <td style="border: 1px solid #000000; padding: 8px; text-align: left;">1996-09-19</td>
+           </tr>  
+           <tr>
+               <td style="border: 1px solid #000000; padding: 8px; text-align: left;">10310</td>
+               <td style="border: 1px solid #000000; padding: 8px; text-align: left;">77</td>
+               <td style="border: 1px solid #000000; padding: 8px; text-align: left;">1996-09-20</td>
+           </tr>    
+       </table>
+       <h2>query</h2>
+       <P>SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate FROM Orders LEFT OUTER JOIN</P>
+       <p>Customers ON</p>
+       <p>Orders.customerID=Customers.customerID;</p>
+       <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+        <tr>
+            <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Order ID</th>
+            <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Customer name</th>
+            <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Order date</th>
+        </tr>
+        <tr>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">10308</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">muskan</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">1996-09-18</td>
+        </tr>  
+        <tr>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">10309</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">awaz</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">1996-09-19</td>
+        </tr>  
+        <tr>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">10310</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">khushiii</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">1996-09-20</td>
+        </tr>    
+    </table>
+    <p>SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate FROM Orders RIGHT OUTER JOIN</p>
+    <p>Customers ON</p>
+    <p>Orders.customerID=Customers.customerID;</p>
+    <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+        <tr>
+            <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Order ID</th>
+            <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Customer name</th>
+            <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Order date</th>
+        </tr>
+        <tr>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">NULL</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">Muskan</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">NULL</td>
+        </tr>  
+        <tr>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">10308</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">awaz</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">1996-09-18</td>
+        </tr>  
+        
+        <tr>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">NULL</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">Khushii</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">NULL</td>
+        </tr>    
+    </table>
+    <h1>Self Join</h1>
+    <p>A self-join is a type of join in SQL where a table is joined with itself. This is useful when you want to compare rows within the same table based on some condition. There are different types of self-joins, depending on the criteria used for comparison:</p>
+    <h2>Syntax</h2>
+    <p>SELECT columns FROM columns FROM table_name t1 JOIN</p>
+    <p>table_name t2 ON t1.common_column = t2.common_column;</p>
+    <p>Example Table : Customers</p>
+    
+
+    <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+     <tr>
+         <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">customerID</th>
+         <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">CustomerName</th>
+         <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">ContactNo</th>
+         <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Country</th>
+     </tr>
+     <tr>
+             <td style="border: 1px solid #000000; padding: 8px; text-align: left;">1</td>
+             <td style="border: 1px solid #000000; padding: 8px; text-align: left;">Muskan</td>
+             <td style="border: 1px solid #000000; padding: 8px; text-align: left;">80041****</td>
+             <td style="border: 1px solid #000000; padding: 8px; text-align: left;">USA</td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">2</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">awaz</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">94041****</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">Germany</td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">3</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">khushiii</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">67041****</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">Germany</td>
+     </tr>
+    </table>
+    <h2>query</h2>
+    <p>SELECT A.CustomerName AS CustomerName1, B.CustomerName AS CustomerName2 FROM Customers A, Customers B WHERE A.CustomerID <> B.CustomerID;</p>
+    
+
+
+</body>
+</html>

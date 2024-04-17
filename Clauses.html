@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="font-size: 40px; background-color: rgb(172, 209, 253);">CLAUSES</h1>
+   <h1>Group by</h1>
+    <h1>Grouping the retrieved values</h1>
+    <p>In MySQL, the GROUP BY clause is used in conjunction with aggregate functions to group rows that have the same values into summary rows. It's commonly used to perform aggregate functions like COUNT, SUM, AVG, MAX, or MIN on groups of data. Here's the basic syntax:</p>
+    <h2>Syntax</h2>
+    <p>SELECT column1, aggregate_function(column2) FROM table_name GROUP BY column1;</p>
+    <p>Additionally, you can use the HAVING clause to filter groups based on aggregate conditions. The HAVING clause is similar to the WHERE clause but is applied after the GROUP BY operation.</p>
+    <P>SELECT column1, aggregate_function(column2) FROM table_name GROUP BY column1 HAVING condition;</P>
+    <p>Example Table : studen</p>
+
+    <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+     <tr>
+         <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">RollNo</th>
+         <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Name</th>
+         <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">PhoneNo</th>
+         <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Class</th>
+         <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Marks</th>
+         <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">City</th>
+     </tr>
+     <tr>
+             <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4286</td>
+             <td style="border: 1px solid #000000; padding: 8px; text-align: left;">Muskan</td>
+             <td style="border: 1px solid #000000; padding: 8px; text-align: left;">80041****</td>
+             <td style="border: 1px solid #000000; padding: 8px; text-align: left;">BCA-I</td>
+             <td style="border: 1px solid #000000; padding: 8px; text-align: left;">296</td>
+             <td style="border: 1px solid #000000; padding: 8px; text-align: left;">chandigarh</td>
+     </tr>
+     <tr>
+         <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4267</td>
+         <td style="border: 1px solid #000000; padding: 8px; text-align: left;">awaz</td>
+         <td style="border: 1px solid #000000; padding: 8px; text-align: left;">7080***</td>
+         <td style="border: 1px solid #000000; padding: 8px; text-align: left;">BCA-I</td>
+         <td style="border: 1px solid #000000; padding: 8px; text-align: left;">240</td>
+         <td style="border: 1px solid #000000; padding: 8px; text-align: left;">punjab</td>
+ </tr>
+ <tr>
+     <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4272</td>
+     <td style="border: 1px solid #000000; padding: 8px; text-align: left;">khushiii</td>
+     <td style="border: 1px solid #000000; padding: 8px; text-align: left;">6080****</td>
+     <td style="border: 1px solid #000000; padding: 8px; text-align: left;">BCA-I</td>
+     <td style="border: 1px solid #000000; padding: 8px; text-align: left;">190</td>
+     <td style="border: 1px solid #000000; padding: 8px; text-align: left;">haryana</td>
+</tr>
+ <tr>
+      <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4277</td>
+       <td style="border: 1px solid #000000; padding: 8px; text-align: left;">SAURAV</td>
+      <td style="border: 1px solid #000000; padding: 8px; text-align: left;">8080****</td>
+      <td style="border: 1px solid #000000; padding: 8px; text-align: left;">BCA-I</td>
+     <td style="border: 1px solid #000000; padding: 8px; text-align: left;">250</td>
+      <td style="border: 1px solid #000000; padding: 8px; text-align: left;">chandigarh</td>
+   </tr>
+ </table>
+    <h2>Query</h2>
+    <p>SELECT City, count(*) as No_of_students FROM student GROUP BY City;</p>
+    <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+        <tr>
+            <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">City</th>
+            <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">No_of_students</th>
+         </tr>
+         <tr>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">chandigarh</td>
+             <td style="border: 1px solid #000000; padding: 8px; text-align: left;">2</td>
+        </tr> 
+        <tr>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">Punjab</td>
+             <td style="border: 1px solid #000000; padding: 8px; text-align: left;">1</td>
+        </tr>  
+        <tr>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">Haryana</td>
+             <td style="border: 1px solid #000000; padding: 8px; text-align: left;">1</td>
+        </tr>       
+        </table>
+    <p>SELECT City, count(*) as No_of_students FROM student GROUP BY City Having count(city) < 2;</p>
+    <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+        <tr>
+            <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">City</th>
+            <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">No_of_students</th>
+         </tr>
+         <tr>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">Punjab</td>
+             <td style="border: 1px solid #000000; padding: 8px; text-align: left;">1</td>
+        </tr>  
+        <tr>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">Haryana</td>
+             <td style="border: 1px solid #000000; padding: 8px; text-align: left;">1</td>
+        </tr>       
+    </table>
+    <h1>Order by</h1>
+    <h1>Ordering the results</h1>
+    <p>In MySQL, the ORDER BY clause is used to sort the result set of a query based on one or more columns. It allows you to specify the order in which the rows should be returned. Here's the basic syntax:</p>
+    <h2>Syntax</h2>
+    <p>SELECT column1, column2, ... FROM table_name ORDER BY column1 [ASC | DESC], column2 [ASC | DESC], ...;</p>
+    <p>Example Table : studen</p>
+
+    <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+     <tr>
+         <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">RollNo</th>
+         <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Name</th>
+         <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">PhoneNo</th>
+         <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Class</th>
+         <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Marks</th>
+         <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">City</th>
+     </tr>
+     <tr>
+             <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4286</td>
+             <td style="border: 1px solid #000000; padding: 8px; text-align: left;">Muskan</td>
+             <td style="border: 1px solid #000000; padding: 8px; text-align: left;">80041****</td>
+             <td style="border: 1px solid #000000; padding: 8px; text-align: left;">BCA-I</td>
+             <td style="border: 1px solid #000000; padding: 8px; text-align: left;">296</td>
+             <td style="border: 1px solid #000000; padding: 8px; text-align: left;">chandigarh</td>
+     </tr>
+     <tr>
+         <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4267</td>
+         <td style="border: 1px solid #000000; padding: 8px; text-align: left;">awaz</td>
+         <td style="border: 1px solid #000000; padding: 8px; text-align: left;">7080***</td>
+         <td style="border: 1px solid #000000; padding: 8px; text-align: left;">BCA-I</td>
+         <td style="border: 1px solid #000000; padding: 8px; text-align: left;">240</td>
+         <td style="border: 1px solid #000000; padding: 8px; text-align: left;">punjab</td>
+ </tr>
+ <tr>
+     <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4272</td>
+     <td style="border: 1px solid #000000; padding: 8px; text-align: left;">khushiii</td>
+     <td style="border: 1px solid #000000; padding: 8px; text-align: left;">6080****</td>
+     <td style="border: 1px solid #000000; padding: 8px; text-align: left;">BCA-I</td>
+     <td style="border: 1px solid #000000; padding: 8px; text-align: left;">190</td>
+     <td style="border: 1px solid #000000; padding: 8px; text-align: left;">haryana</td>
+</tr>
+ <tr>
+      <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4277</td>
+       <td style="border: 1px solid #000000; padding: 8px; text-align: left;">SAURAV</td>
+      <td style="border: 1px solid #000000; padding: 8px; text-align: left;">8080****</td>
+      <td style="border: 1px solid #000000; padding: 8px; text-align: left;">BCA-I</td>
+     <td style="border: 1px solid #000000; padding: 8px; text-align: left;">250</td>
+      <td style="border: 1px solid #000000; padding: 8px; text-align: left;">chandigarh</td>
+   </tr>
+ </table>
+ <h2>Query</h2>
+ <p>SELECT Distinct City FROM student ORDER BY City ASC;</p>
+ <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+    <tr>
+        <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">City</th>
+    </tr>
+    <tr>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">chandigarh</td>
+        
+    </tr>  
+    <tr>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">Haryana</td>
+        
+    </tr>  
+    <tr>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">Punjab</td>
+         
+    </tr>  
+   
+      
+</table>
+
+<p>SELECT Distinct City FROM student ORDER BY City DESC;</p>
+<table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+    <tr>
+        <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">City</th>
+    </tr>
+    <tr>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">Punjab</td>
+         
+    </tr>  
+   
+    <tr>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">Haryana</td>
+        
+    </tr>  
+    <tr>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">chandigarh</td>
+        
+    </tr>  
+    </table>
+    
+    <h1>Limit</h1>
+    <h1>Limiting the results to particular number of rows</h1>
+    <p>In MySQL, the LIMIT clause is used to restrict the number of rows returned by a query. It is commonly used to retrieve a subset of rows from a result set, especially when dealing with large datasets. Here's the basic syntax:</p>
+    <h2>syntax</h2>
+    <p>SELECT column1, column2, ... FROM table_name LIMIT number_of_rows;</p>
+    <p>Example Table : studen</p>
+
+    <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+     <tr>
+         <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">RollNo</th>
+         <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Name</th>
+         <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">PhoneNo</th>
+         <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Class</th>
+         <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Marks</th>
+         <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">City</th>
+     </tr>
+     <tr>
+             <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4286</td>
+             <td style="border: 1px solid #000000; padding: 8px; text-align: left;">Muskan</td>
+             <td style="border: 1px solid #000000; padding: 8px; text-align: left;">80041****</td>
+             <td style="border: 1px solid #000000; padding: 8px; text-align: left;">BCA-I</td>
+             <td style="border: 1px solid #000000; padding: 8px; text-align: left;">296</td>
+             <td style="border: 1px solid #000000; padding: 8px; text-align: left;">chandigarh</td>
+     </tr>
+     <tr>
+         <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4267</td>
+         <td style="border: 1px solid #000000; padding: 8px; text-align: left;">awaz</td>
+         <td style="border: 1px solid #000000; padding: 8px; text-align: left;">7080***</td>
+         <td style="border: 1px solid #000000; padding: 8px; text-align: left;">BCA-I</td>
+         <td style="border: 1px solid #000000; padding: 8px; text-align: left;">240</td>
+         <td style="border: 1px solid #000000; padding: 8px; text-align: left;">punjab</td>
+ </tr>
+ <tr>
+     <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4272</td>
+     <td style="border: 1px solid #000000; padding: 8px; text-align: left;">khushiii</td>
+     <td style="border: 1px solid #000000; padding: 8px; text-align: left;">6080****</td>
+     <td style="border: 1px solid #000000; padding: 8px; text-align: left;">BCA-I</td>
+     <td style="border: 1px solid #000000; padding: 8px; text-align: left;">190</td>
+     <td style="border: 1px solid #000000; padding: 8px; text-align: left;">haryana</td>
+</tr>
+ <tr>
+      <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4277</td>
+       <td style="border: 1px solid #000000; padding: 8px; text-align: left;">SAURAV</td>
+      <td style="border: 1px solid #000000; padding: 8px; text-align: left;">8080****</td>
+      <td style="border: 1px solid #000000; padding: 8px; text-align: left;">BCA-I</td>
+     <td style="border: 1px solid #000000; padding: 8px; text-align: left;">250</td>
+      <td style="border: 1px solid #000000; padding: 8px; text-align: left;">chandigarh</td>
+   </tr>
+ </table>
+ <h2>Query</h2>
+ <p>SELECT * FROM student LIMIT 2;</p>
+ <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+    <tr>
+        <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">RollNo</th>
+        <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Name</th>
+        <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">PhoneNo</th>
+        <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Class</th>
+        <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Marks</th>
+        <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">City</th>
+    </tr>
+    <tr>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4286</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">Muskan</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">80041****</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">BCA-I</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">296</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">chandigarh</td>
+    </tr>
+    <tr>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4267</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">awaz</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">7080***</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">BCA-I</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">240</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">punjab</td>
+</tr>
+      
+</table>
+<h1>Offset</h1>
+<h1>OFFSET - Clause</h1>
+<p>In MySQL, the OFFSET clause is used in conjunction with the LIMIT clause to specify the number of rows to skip before starting to return rows from the result set. It's commonly used for pagination, where you want to retrieve a subset of rows starting from a specific position in the result set. Here's the basic syntax:</p>
+<h2>syntax</h2>
+<p>SELECT column1, column2, ... FROM table_name LIMIT number_of_rows OFFSET offset_value;</p>
+<p>Example Table : studen</p>
+
+    <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+     <tr>
+         <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">RollNo</th>
+         <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Name</th>
+         <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">PhoneNo</th>
+         <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Class</th>
+         <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Marks</th>
+         <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">City</th>
+     </tr>
+     <tr>
+             <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4286</td>
+             <td style="border: 1px solid #000000; padding: 8px; text-align: left;">Muskan</td>
+             <td style="border: 1px solid #000000; padding: 8px; text-align: left;">80041****</td>
+             <td style="border: 1px solid #000000; padding: 8px; text-align: left;">BCA-I</td>
+             <td style="border: 1px solid #000000; padding: 8px; text-align: left;">296</td>
+             <td style="border: 1px solid #000000; padding: 8px; text-align: left;">chandigarh</td>
+     </tr>
+     <tr>
+         <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4267</td>
+         <td style="border: 1px solid #000000; padding: 8px; text-align: left;">awaz</td>
+         <td style="border: 1px solid #000000; padding: 8px; text-align: left;">7080***</td>
+         <td style="border: 1px solid #000000; padding: 8px; text-align: left;">BCA-I</td>
+         <td style="border: 1px solid #000000; padding: 8px; text-align: left;">240</td>
+         <td style="border: 1px solid #000000; padding: 8px; text-align: left;">punjab</td>
+ </tr>
+ <tr>
+     <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4272</td>
+     <td style="border: 1px solid #000000; padding: 8px; text-align: left;">khushiii</td>
+     <td style="border: 1px solid #000000; padding: 8px; text-align: left;">6080****</td>
+     <td style="border: 1px solid #000000; padding: 8px; text-align: left;">BCA-I</td>
+     <td style="border: 1px solid #000000; padding: 8px; text-align: left;">190</td>
+     <td style="border: 1px solid #000000; padding: 8px; text-align: left;">haryana</td>
+</tr>
+ <tr>
+      <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4277</td>
+       <td style="border: 1px solid #000000; padding: 8px; text-align: left;">SAURAV</td>
+      <td style="border: 1px solid #000000; padding: 8px; text-align: left;">8080****</td>
+      <td style="border: 1px solid #000000; padding: 8px; text-align: left;">BCA-I</td>
+     <td style="border: 1px solid #000000; padding: 8px; text-align: left;">250</td>
+      <td style="border: 1px solid #000000; padding: 8px; text-align: left;">chandigarh</td>
+   </tr>
+ </table>
+ <h2>Query</h2>
+ <p>SELECT * FROM student LIMIT 1 OFFSET 1;</p>
+ <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+    <tr>
+        <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">RollNo</th>
+        <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Name</th>
+        <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">PhoneNo</th>
+        <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Class</th>
+        <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Marks</th>
+        <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">City</th>
+    </tr>
+    <tr>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4267</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">awaz</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">7080***</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">BCA-I</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">240</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">punjab</td>
+</tr>
+</table>
+
+</body>
+</html>

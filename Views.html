@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>views</title>
+</head>
+<body>
+    <h1 style="font-size: 40px; background-color: rgb(172, 209, 253);">VIEWS</h1>
+   <h1>Introduction</h1>
+    <h1>What is Views?</h1>
+    <p>In databases, a view is a virtual table that is based on the result set of a SELECT query. Unlike physical tables, views do not store data themselves; they are essentially saved queries that dynamically generate the result set when queried. Views can simplify complex queries, abstract the underlying data model, and provide a security mechanism by restricting access to certain columns or rows of a table.</p>
+    <h2>Key Points of Views:</h2>
+    <h3>Structure:</h3>
+    <p>Views have a structure similar to tables, with columns and rows, but they do not store any data directly.</p>
+    <h3>Virtual:</h3>
+    <p>Views are virtual tables, meaning they are not physical entities and do not occupy storage space.</p>
+    <h3>Schema Binding:</h3>
+    <P>Views can be schema-bound, meaning they are bound to the schema of the underlying tables. This ensures that the underlying schema cannot be modified in a way that would break the view.</P>
+    <h3>Security:</h3>
+    <p>Views can be used to control access to data by providing a restricted view of the underlying tables. Users can be granted access to views without granting direct access to the underlying tables. </p>
+    <h3>Complex Queries:</h3>
+    <p>Views can simplify complex queries by encapsulating logic and calculations into a single object that can be queried like a table.</p>
+    <h3>Performance:</h3>
+    <p> Views can improve query performance by pre-computing and caching results, especially for frequently used or complex queries.</p>
+    <h3>Modifiability:</h3>
+    <p>Some views are updatable, meaning they can be used to insert, update, or delete rows from the underlying tables, provided certain conditions are met.</p>
+        <H1>Creating Views</H1>
+        <p>Here's how you can create a view in MySQL:</p>
+        <h2>syntax</h2>
+        <p>CREATE VIEW view_name AS SELECT column1, column2, ... FROM table_name WHERE condition;</p>
+        <p>Example Table : studen</p>
+
+        <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+         <tr>
+             <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">RollNo</th>
+             <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Name</th>
+             <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">PhoneNo</th>
+             <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Class</th>
+             <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Marks</th>
+             <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">City</th>
+         </tr>
+         <tr>
+                 <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4286</td>
+                 <td style="border: 1px solid #000000; padding: 8px; text-align: left;">Muskan</td>
+                 <td style="border: 1px solid #000000; padding: 8px; text-align: left;">80041****</td>
+                 <td style="border: 1px solid #000000; padding: 8px; text-align: left;">BCA-I</td>
+                 <td style="border: 1px solid #000000; padding: 8px; text-align: left;">296</td>
+                 <td style="border: 1px solid #000000; padding: 8px; text-align: left;">chandigarh</td>
+         </tr>
+         <tr>
+             <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4267</td>
+             <td style="border: 1px solid #000000; padding: 8px; text-align: left;">awaz</td>
+             <td style="border: 1px solid #000000; padding: 8px; text-align: left;">7080***</td>
+             <td style="border: 1px solid #000000; padding: 8px; text-align: left;">BCA-I</td>
+             <td style="border: 1px solid #000000; padding: 8px; text-align: left;">240</td>
+             <td style="border: 1px solid #000000; padding: 8px; text-align: left;">punjab</td>
+     </tr>
+     <tr>
+         <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4272</td>
+         <td style="border: 1px solid #000000; padding: 8px; text-align: left;">khushiii</td>
+         <td style="border: 1px solid #000000; padding: 8px; text-align: left;">6080****</td>
+         <td style="border: 1px solid #000000; padding: 8px; text-align: left;">BCA-I</td>
+         <td style="border: 1px solid #000000; padding: 8px; text-align: left;">190</td>
+         <td style="border: 1px solid #000000; padding: 8px; text-align: left;">haryana</td>
+    </tr>
+     <tr>
+          <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4277</td>
+           <td style="border: 1px solid #000000; padding: 8px; text-align: left;">SAURAV</td>
+          <td style="border: 1px solid #000000; padding: 8px; text-align: left;">8080****</td>
+          <td style="border: 1px solid #000000; padding: 8px; text-align: left;">BCA-I</td>
+         <td style="border: 1px solid #000000; padding: 8px; text-align: left;">250</td>
+          <td style="border: 1px solid #000000; padding: 8px; text-align: left;">chandigarh</td>
+       </tr>
+     </table>
+     <h2>Query</h2>
+     <p>CREATE VIEW failStudents AS SELECT * FROM student WHERE marks < 180;</p>
+     <p>Query OK, 0 rows affected (0.03 sec)</p>
+     <p>SELECT * FROM failStudents;</p>
+     <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+        <tr>
+            <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">RollNo</th>
+            <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Name</th>
+            <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">PhoneNo</th>
+            <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Class</th>
+            <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Marks</th>
+            <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">City</th>
+        </tr>
+        <tr>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4272</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">khushiii</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">6080****</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">BCA-I</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">190</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">haryana</td>
+       </tr>
+       </table>
+       <h1>Deleting Views</h1>
+       <p>Here's how you can delete a view in MySQL:</p>
+       <h2>syntax</h2>
+       <p>Example View : failStudents</p>
+       <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+        <tr>
+            <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">RollNo</th>
+            <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Name</th>
+            <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">PhoneNo</th>
+            <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Class</th>
+            <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Marks</th>
+            <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">City</th>
+        </tr>
+        <tr>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4272</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">khushiii</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">6080****</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">BCA-I</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">190</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">haryana</td>
+       </tr>
+       </table>
+       <h2>Query</h2>
+       <p>DROP VIEW failStudents;</p>
+       <p>Query OK, 0 rows affected (0.01 sec)</p>
+</body>
+</html>

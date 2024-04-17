@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>update</title>
+</head>
+<body>
+    <h1 style="font-size: 40px; background-color:rgb(172, 209, 253) ;">Update</h1>
+    <h1>Updating values</h1>
+    <p>To update data in a MySQL table, you use the UPDATE statement. Here's the basic syntax:</p>
+    <h2>Syntax</h2>
+    <h3>Updating a value of column(s)</h3>
+    <p>UPDATE table_name SET column1 = value1, column2 = value2, ...;</p>
+
+    <h3>Updating a value of particular columns</h3>
+    <p>UPDATE table_name SET column1 = value1, column2 = value2, ... WHERE condition;</p>
+    <p>Example Table : student</p>
+    <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+        <tr>
+            <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">RollNo</th>
+            <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Name</th>
+            <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">PhoneNo</th>
+            <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Class</th>
+        </tr>
+        <tr>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4286</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">Muskan</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">9041****</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">NULL</td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4267</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">awaz</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">NULL</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">NULL</td>
+    </tr>
+    <tr>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4272</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">khushiii</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">9080****</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">NULL</td>
+</tr>
+<tr>
+    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4203</td>
+    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">aashishii</td>
+    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">9080****</td>
+    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">NULL</td>
+</tr>
+        </table>
+        <h2>Query</h2>
+        <p>UPDATE student SET class = 'BCA-I';</p>
+        <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+            <tr>
+                <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">RollNo</th>
+                <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Name</th>
+                <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">PhoneNo</th>
+                <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Class</th>
+            </tr>
+            <tr>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4286</td>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">Muskan</td>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">9041****</td>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">BCA-I</td>
+                    
+            </tr>
+            <tr>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4267</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">awaz</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">NULL</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">BCA-I</td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4272</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">khushiii</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">9080****</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">BCA-I</td>
+    </tr>
+    <tr>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4277</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">SAURAV</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">9080****</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">BCA-I</td>
+</tr>
+    </table>
+    <p>UPDATE table_name SET PhoneNo = '9080***' WHERE RollNo = '4267';</p>
+
+    <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+        <tr>
+            <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">RollNo</th>
+            <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Name</th>
+            <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">PhoneNo</th>
+            <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Class</th>
+        </tr>
+        <tr>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4286</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">Muskan</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">9041****</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">BCA-I</td>
+                
+        </tr>
+        <tr>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4267</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">awaz</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">9080***</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">BCA-I</td>
+    </tr>
+    <tr>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4272</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">khushiii</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">9080****</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">BCA-I</td>
+</tr>
+<tr>
+    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4277</td>
+    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">SAURAV</td>
+    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">9080****</td>
+    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">BCA-I</td>
+</tr>
+</table>
+
+
+</body>
+</html>

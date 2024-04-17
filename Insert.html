@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section class="home" id="home">
+        <h1 style="font-size: 40px; background-color:rgb(172, 209, 253) ;">Insert</h1>
+        <h1>Inserting value into Table</h1>
+        <p>To insert data into a MySQL table, you use the INSERT INTO statement. Here's the basic syntax:</p>
+        <h2>Syntax</h2>
+        <h3>Inserting all values of a row</h3>
+        <p>INSERT INTO table_name VALUES (value1, value2, ...);</p>
+        <h3>Inserting particular values of a row</h3>
+        <p>INSERT INTO table_name(column1, column3, ...) VALUES (value1, value3, ... );</p>
+        <h3>Inserting Multiple rows</h3>
+        <p>INSERT INTO table_name VALUES</p>
+        <p>(value1, value2, ...), (value1, value2, ...), (value1, value2, ...);</p>
+        <p>Example Table : student</p>
+        <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+            <tr>
+                <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">RollNo</th>
+                <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Name</th>
+                <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">PhoneNo</th>
+               
+            </tr>
+            </table>
+        <h2>Query</h2>
+        <p>INSERT INTO student VALUES ('4201', "Abhishek", "9688258565");</p>
+        <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+            <tr>
+                <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">RollNo</th>
+                <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Name</th>
+                <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">PhoneNo</th>
+               
+            </tr>
+            <tr>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4286</td>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">Muskan</td>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">9041****</td>
+                    
+            </tr>
+            </table>
+        <p>INSERT INTO student(RollNo, Name) VALUES ('4202', "Anjali");</p>
+        <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+            <tr>
+                <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">RollNo</th>
+                <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Name</th>
+                <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">PhoneNo</th>
+               
+            </tr>
+            <tr>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4286</td>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">Muskan</td>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">9041****</td>
+                    
+            </tr>
+            <tr>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4267</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">awaz</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">9080****</td>
+                
+        </tr>
+            </table>
+            <p>INSERT INTO student VALUES ('4203', "Aashishiii", "924***"), ('4277', "saurav", "9847***");</p>
+            <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+                <tr>
+                    <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">RollNo</th>
+                    <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Name</th>
+                    <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">PhoneNo</th>
+                   
+                </tr>
+                <tr>
+                        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4286</td>
+                        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">Muskan</td>
+                        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">9041****</td>
+                        
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4267</td>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">awaz</td>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">9080****</td>
+                    
+            </tr>
+            <tr>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4272</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">khushiii</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">9080****</td>
+                
+        </tr>
+        <tr>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4203</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">aashishii</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">9080****</td>
+            
+    </tr>
+                </table>
+    
+    </section>
+</body>
+</html>

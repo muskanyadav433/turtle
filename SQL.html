@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL</title>
+    <!-- <link rel="stylesheet" type="text/css" href="style.css">   
+     
+    <link rel="stylesheet"
+    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"> -->
+    <style>
+      .home{
+        background: url(logo/red.jpg);
+        
+        position: relative;
+       height: 100vh;
+       width: 100%;
+       opacity: 85%;
+    background-size: cover;
+    background-position: center;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 1rem;
+    align-items: center ;
+      }
+      div{
+        display: inline-block;
+        
+        
+        
+      }
+      div a{
+        margin-left: 30px;
+        margin-top: 30px;
+      }
+
+    </style>
+</head>
+<body>
+  <section class="home" id="home">
+  <div>
+    <!-- <a style="font-size: 20px;background-color: rgb(222, 107, 107);border-radius: 20px; padding: 20px;font-family: 'Times New Roman', Times, serif; " href="intro.html" target="_self">introduction</a> -->
+    <a href="intro.html" style="display: inline-block;font-size: 30px; padding: 20px 30px; background-color: #e77485; color: white; text-align: center; text-decoration: none; border-radius: 5px; border: none; cursor: pointer;
+    "onmouseover="this.style.color='black'"onmouseout="this.style.color='white'"
+    ">INTRODUCTION TO MYSQL</a>
+    <a href="database.html" style="display: inline-block;font-size: 30px; padding: 20px 30px; background-color: #e77485; color: white; text-align: center; text-decoration: none; border-radius: 5px; border: none; cursor: pointer;"
+    onmouseover="this.style.color='black'"onmouseout="this.style.color='white'">DATABASE</a>
+    <a href="table.html" style="display: inline-block; font-size: 30px; padding: 20px 30px; background-color: #e77485; color: white; text-align: center; text-decoration: none; border-radius: 5px; border: none; cursor: pointer;"
+    onmouseover="this.style.color='black'"onmouseout="this.style.color='white'">TABLE </a>
+
+    <a href="Alter.html" style="display: inline-block; font-size: 30px; padding: 20px 30px; background-color: #e77485; color: white; text-align: center; text-decoration: none; border-radius: 5px; border: none; cursor: pointer;"
+    onmouseover="this.style.color='black'"onmouseout="this.style.color='white'">ALTER </a>
+    <a href="Insert.html" style="display: inline-block; font-size: 30px; padding: 20px 30px; background-color: #e77485; color: white; text-align: center; text-decoration: none; border-radius: 5px; border: none; cursor: pointer;"
+    onmouseover="this.style.color='black'"onmouseout="this.style.color='white'">INSERT</a>
+    <a href="Delete.html" style="display: inline-block; font-size: 30px; padding: 20px 30px; background-color: #e77485; color: white; text-align: center; text-decoration: none; border-radius: 5px; border: none; cursor: pointer;"
+    onmouseover="this.style.color='black'"onmouseout="this.style.color='white'">DELETE</a>
+    <a href="Update.html" style="display: inline-block; font-size: 30px; padding: 20px 30px; background-color: #e77485; color: white; text-align: center; text-decoration: none; border-radius: 5px; border: none; cursor: pointer;"
+    onmouseover="this.style.color='black'"onmouseout="this.style.color='white'">UPDATE</a>
+
+    <a href="Select.html" style="display: inline-block; font-size: 30px; padding: 20px 30px; background-color: #e77485; color: white; text-align: center; text-decoration: none; border-radius: 5px; border: none; cursor: pointer;"
+    onmouseover="this.style.color='black'"onmouseout="this.style.color='white'">SELECT</a>
+    <a href="Clauses.html" style="display: inline-block; font-size: 30px; padding: 20px 30px; background-color: #e77485; color: white; text-align: center; text-decoration: none; border-radius: 5px; border: none; cursor: pointer;"
+    onmouseover="this.style.color='black'"onmouseout="this.style.color='white'">CLAUSES</a>
+
+   
+    <a href="Views.html" style="display: inline-block; font-size: 30px; padding: 20px 30px; background-color: #e77485; color: white; text-align: center; text-decoration: none; border-radius: 5px; border: none; cursor: pointer;"
+    onmouseover="this.style.color='black'"onmouseout="this.style.color='white'">VIEWS</a>
+   
+    <a href="Managing.html" style="display: inline-block; font-size: 30px; padding: 20px 30px; background-color: #e77485; color: white; text-align: center; text-decoration: none; border-radius: 5px; border: none; cursor: pointer;"
+    onmouseover="this.style.color='black'"onmouseout="this.style.color='white'">MANAGINS PEIVILEGES</a>
+    
+    <a href="transaction.html" style="display: inline-block; font-size: 30px; padding: 20px 30px; background-color: #e77485; color: white; text-align: center; text-decoration: none; border-radius: 5px; border: none; cursor: pointer;"
+    onmouseover="this.style.color='black'"onmouseout="this.style.color='white'">TRANSACTION MANAGEMENT</a>
+    
+    <a href="joins.html" style="display: inline-block; font-size: 30px; padding: 20px 30px; background-color: #e77485; color: white; text-align: center; text-decoration: none; border-radius: 5px; border: none; cursor: pointer;"
+    onmouseover="this.style.color='black'"onmouseout="this.style.color='white'">JOINS</a>
+    
+    
+
+    <!-- <a href="database.html" target="_self">Database</a>
+    <a href="table.html" target="_self">Table</a> -->
+    <a href="" target="_self"></a>
+    <a href="" target="_self"></a>
+    <a href="" target="_self"></a>
+    <a href="" target="_self"></a>
+    <a href="" target="_self"></a>
+    
+  </div>
+
+
+</section>
+</body>
+</html>

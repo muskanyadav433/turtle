@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section class="home" id="home">
+        <h1 style="font-size: 40px; background-color:rgb(172, 209, 253) ;">Delete</h1>
+        <h1>Deleting Row(s) from Table</h1>
+        <p>To delete data from a MySQL table, you use the DELETE FROM statement. Here's the basic syntax:</p>
+        <h2>syntax</h2>
+        <h3>Deleting all rows</h3>
+        <p>DELETE FROM table_name;</p>
+        <h3>Deleting a particular row</h3>
+        <p>DELETE FROM table_name WHERE condition;</p>
+        <p>Example Table : student</p>
+
+        <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+            <tr>
+                <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">RollNo</th>
+                <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Name</th>
+                <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">PhoneNo</th>
+               
+            </tr>
+            <tr>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4286</td>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">Muskan</td>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">9041****</td>
+                    
+            </tr>
+            <tr>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4267</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">awaz</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">9080****</td>
+                
+        </tr>
+        <tr>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4272</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">khushiii</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">9080****</td>
+            
+    </tr>
+    <tr>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4203</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">aashishii</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">9080****</td>
+        
+</tr>
+            </table>
+    <h2>Query</h2>
+    <p>DELETE FROM student WHERE rollNo = "4203";</p>
+    <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+        <tr>
+            <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">RollNo</th>
+            <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Name</th>
+            <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">PhoneNo</th>
+           
+        </tr>
+        <tr>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4286</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">Muskan</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">9041****</td>
+                
+        </tr>
+        <tr>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4267</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">awaz</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">9080****</td>
+            
+    </tr>
+    <tr>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4272</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">khushiii</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">9080****</td>
+        
+</tr>
+</table>
+<p>DELETE FROM student;</p>
+<table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+    <tr>
+        <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">RollNo</th>
+        <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Name</th>
+        <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">PhoneNo</th>
+       
+    </tr>
+    </table>
+
+    </section>
+</body>
+</html>

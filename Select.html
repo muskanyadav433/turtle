@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>select</title>
+    
+
+</head>
+<body>
+    <h1 style="font-size: 40PX; background-color:rgb(172, 209, 253) ;">select</h1>
+    <h1>Selecting values</h1>
+    <p>To select data from a MySQL table, you use the SELECT statement. Here's the basic syntax:</p>
+    <h2>Syntax</h2>
+    <h3>Selecting values of particular column(s)</h3>
+    <p>SELECT column1, column2, ... FROM table_name;</p>
+    <h3>Selecting values of every column</h3>
+    <p>SELECT * FROM table_name;</p>
+    <h3>Example Table : student</h3>
+    <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+        <tr>
+            <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">RollNo</th>
+            <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Name</th>
+            <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">PhoneNo</th>
+            <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Class</th>
+            <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Marks</th>
+            <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">City</th>
+        </tr>
+        <tr>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4286</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">Muskan</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">9041****</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">BCA-I</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">296</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">chandigarh</td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4267</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">awaz</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">9080***</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">BCA-I</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">240</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">punjab</td>
+    </tr>
+    <tr>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4272</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">khushiii</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">9080****</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">BCA-I</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">190</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">haryana</td>
+</tr>
+<tr>
+    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4277</td>
+    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">SAURAV</td>
+    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">9080****</td>
+    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">BCA-I</td>
+    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">250</td>
+    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">chandigarh</td>
+</tr>
+</table>
+<h2>Query</h2>
+<p>SELECT Name, PhoneNo FROM student;</p>
+<table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+    <tr>
+<th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Name</th>
+<th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">PhoneNo</th>
+        </tr>
+        <tr>
+            
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">Muskan</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">9041****</td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">awaz</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">9080****</td>
+        
+        </tr>
+        <tr>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">khushiii</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">9080****</td>
+        
+        </tr>
+        <tr>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">saurav</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">9080****</td>
+            
+        </tr>
+        </table>
+        <p>SELECT * FROM student;</p>
+        <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+            <tr>
+                <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">RollNo</th>
+                <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Name</th>
+                <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">PhoneNo</th>
+                <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Class</th>
+                <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Marks</th>
+                <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">City</th>
+            </tr>
+            <tr>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4286</td>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">Muskan</td>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">9041****</td>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">BCA-I</td>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">296</td>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">chandigarh</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4267</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">awaz</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">9080***</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">BCA-I</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">240</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">punjab</td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4272</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">khushiii</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">9080****</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">BCA-I</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">190</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">haryana</td>
+    </tr>
+    <tr>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4277</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">SAURAV</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">9080****</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">BCA-I</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">250</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">chandigarh</td>
+    </tr>
+    </table>
+
+
+    <h1>Conditional Retrievel of rows</h1>
+    <p>To retrieve rows from a MySQL table based on specific conditions, you can use the SELECT statement along with the WHERE clause. The WHERE clause allows you to specify conditions that filter the rows returned by the query. Here's how you can use it:</p>
+    <h2>Syntax</h2>
+    <p>SELECT column1, column2, ... FROM table_name WHERE condition;</p>
+    <p>Comparison Operators</p>
+       <table style="width: 100%; border-collapse: collapse;">
+        <tr style="background-color: #f2f2f2;">
+          <th style="padding: 8px; text-align: left;">Operator</th>
+          <th style="padding: 8px; text-align: left;">Description</th>
+        </tr>
+        <tr>
+          <td style="padding: 8px; border-bottom: 1px solid #ddd;">==</td>
+          <td style="padding: 8px; border-bottom: 1px solid #ddd;">Equal to</td>
+        </tr>
+        <tr>
+          <td style="padding: 8px; border-bottom: 1px solid #ddd;">!=</td>
+          <td style="padding: 8px; border-bottom: 1px solid #ddd;">Not equal to</td>
+        </tr>
+        <tr>
+          <td style="padding: 8px; border-bottom: 1px solid #ddd;">&lt;</td>
+          <td style="padding: 8px; border-bottom: 1px solid #ddd;">Less than</td>
+        </tr>
+        <tr>
+          <td style="padding: 8px; border-bottom: 1px solid #ddd;">&gt;</td>
+          <td style="padding: 8px; border-bottom: 1px solid #ddd;">Greater than</td>
+        </tr>
+        <tr>
+          <td style="padding: 8px; border-bottom: 1px solid #ddd;">&lt;=</td>
+          <td style="padding: 8px; border-bottom: 1px solid #ddd;">Less than or equal to</td>
+        </tr>
+        <tr>
+          <td style="padding: 8px; border-bottom: 1px solid #ddd;">&gt;=</td>
+          <td style="padding: 8px; border-bottom: 1px solid #ddd;">Greater than or equal to</td>
+        </tr>
+      </table>
+      <h3>logical Operators</h3>
+      <table style="width: 100%; border-collapse: collapse;">
+        <tr style="background-color: #f2f2f2;">
+          <th style="padding: 8px; text-align: left;">Operator</th>
+          <th style="padding: 8px; text-align: left;">Description</th>
+        </tr>
+        <tr>
+          <td style="padding: 8px; border-bottom: 1px solid #ddd;">and</td>
+          <td style="padding: 8px; border-bottom: 1px solid #ddd;">Returns True if both statements are true</td>
+         </tr>
+        <tr>
+          <td style="padding: 8px; border-bottom: 1px solid #ddd;">or</td>
+          <td style="padding: 8px; border-bottom: 1px solid #ddd;">Returns True if one of the statements is true</td>
+        </tr>
+        <tr>
+          <td style="padding: 8px; border-bottom: 1px solid #ddd;">not</td>
+          <td style="padding: 8px; border-bottom: 1px solid #ddd;">Reverse the result, returns False if the result is true</td>
+        </tr>
+      </table>
+      <h3>special operators</h3>
+
+      <table style="width: 100%; border-collapse: collapse;">
+        <tr style="background-color: #f2f2f2;">
+          <th style="padding: 8px; text-align: left;">Operator</th>
+          <th style="padding: 8px; text-align: left;">Description</th>
+        </tr>
+        <!-- <tr>
+          <td style="padding: 8px; border-bottom: 1px solid #ddd;">+</td>
+          <td style="padding: 8px; border-bottom: 1px solid #ddd;">Addition</td>
+        </tr>
+        <tr>
+          <td style="padding: 8px; border-bottom: 1px solid #ddd;">-</td>
+          <td style="padding: 8px; border-bottom: 1px solid #ddd;">Subtraction</td>
+        </tr> --> 
+        <!-- <tr>
+          <td style="padding: 8px; border-bottom: 1px solid #ddd;">*</td>
+          <td style="padding: 8px; border-bottom: 1px solid #ddd;">Multiplication</td>
+        </tr>
+        <tr>
+          <td style="padding: 8px; border-bottom: 1px solid #ddd;">/</td>
+          <td style="padding: 8px; border-bottom: 1px solid #ddd;">Division</td>
+        </tr>
+        <tr>
+          <td style="padding: 8px; border-bottom: 1px solid #ddd;">%</td>
+          <td style="padding: 8px; border-bottom: 1px solid #ddd;">Modulus (remainder)</td>
+        </tr>
+        <tr>
+          <td style="padding: 8px; border-bottom: 1px solid #ddd;">**</td>
+          <td style="padding: 8px; border-bottom: 1px solid #ddd;">Exponentiation</td>
+        </tr>
+        <tr>
+          <td style="padding: 8px; border-bottom: 1px solid #ddd;">//</td>
+          <td style="padding: 8px; border-bottom: 1px solid #ddd;">Floor Division (quotient without remainder)</td>
+        </tr> --> 
+        <tr>
+            <td style="padding: 8px; border-bottom: 1px solid #ddd;">IN</td>
+            <td style="padding: 8px; border-bottom: 1px solid #ddd;">Specifies multiple values for a column. Used in a WHERE clause to specify multiple values in a WHERE clause.</td>
+          </tr>
+          <tr>
+            <td style="padding: 8px; border-bottom: 1px solid #ddd;">BETWEEN</td>
+            <td style="padding: 8px; border-bottom: 1px solid #ddd;">Used to select values within a range.</td>
+          </tr>
+          <tr>
+            <td style="padding: 8px; border-bottom: 1px solid #ddd;">IS NULL</td>
+            <td style="padding: 8px; border-bottom: 1px solid #ddd;">Checks whether a column contains a NULL value.</td>
+          </tr>
+      </table>
+      <h3>example table</h3>
+      <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+        <tr>
+            <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">RollNo</th>
+            <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Name</th>
+            <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">PhoneNo</th>
+            <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Class</th>
+        </tr>
+        <tr>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4286</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">Muskan</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">9041****</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">NULL</td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4267</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">awaz</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">NULL</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">NULL</td>
+    </tr>
+    <tr>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4272</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">khushiii</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">9080****</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">NULL</td>
+</tr>
+<tr>
+    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4203</td>
+    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">aashishii</td>
+    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">9080****</td>
+    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">NULL</td>
+</tr>
+        </table>
+        <h2>Query</h2>
+        <p>SELECT Name, Marks FROM student WHERE RollNo = "4267";</p>
+        <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+          <tr>
+              <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Name</th>
+              <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Marks</th>
+           </tr>  
+           <tr>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">awaz</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">240</td>
+           </tr>
+       </table>
+       <p>SELECT Name, Marks FROM student WHERE</p>
+       <p>RollNo != "4267";</p>
+
+       <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+        <tr>
+            <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Name</th>
+            <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Marks</th>
+            
+         </tr>  
+         <tr>
+          <td style="border: 1px solid #000000; padding: 8px; text-align: left;">muskan</td>
+          <td style="border: 1px solid #000000; padding: 8px; text-align: left;">296</td>
+         </tr>
+         <tr>
+          <td style="border: 1px solid #000000; padding: 8px; text-align: left;">khushiii</td>
+          <td style="border: 1px solid #000000; padding: 8px; text-align: left;">190</td>
+         </tr>
+         <tr>
+          <td style="border: 1px solid #000000; padding: 8px; text-align: left;">saurav</td>
+          <td style="border: 1px solid #000000; padding: 8px; text-align: left;">250</td>
+         </tr>
+     </table>
+     <p>SELECT Name, Marks FROM student WHERE</p>
+     <p>Marks>245; </p>
+     <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+      <tr>
+          <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Name</th>
+          <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Marks</th>
+          
+       </tr>  
+       <tr>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">muskan</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">296</td>
+       </tr>
+       <tr>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">saurav</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">250</td>
+       </tr>
+   </table>
+   <p>SELECT Name, Marks FROM student WHERE marks between 100 and 200;</p>
+   <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+    <tr>
+        <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Name</th>
+        <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Marks</th>
+        
+     </tr>  
+     <tr>
+      <td style="border: 1px solid #000000; padding: 8px; text-align: left;">khushiii</td>
+      <td style="border: 1px solid #000000; padding: 8px; text-align: left;">190</td>
+     </tr>
+     </table>
+     <h1>String Pattern Matching in MySQL</h1>
+     <p>In MySQL, you can use the LIKE operator along with wildcard characters to match patterns in strings. Here's how you can use it:</p>
+     <h2>Syntax</h2>
+     <p>SELECT * FROM table_name WHERE column_name LIKE 'pattern';</p>
+     <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+      <tr>
+          <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">character</th>
+          <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">	Description</th>
+          
+       </tr>  
+       <tr>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">% (Percent)</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">Represents zero or more characters</td>
+       </tr>
+       <tr>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">_ (Underscore)</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">Represents a single character</td>
+       </tr>
+       </table>
+       <p>Example Table : studen</p>
+
+       <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+        <tr>
+            <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">RollNo</th>
+            <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Name</th>
+            <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">PhoneNo</th>
+            <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Class</th>
+            <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Marks</th>
+            <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">City</th>
+        </tr>
+        <tr>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4286</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">Muskan</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">80041****</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">BCA-I</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">296</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">chandigarh</td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4267</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">awaz</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">7080***</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">BCA-I</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">240</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">punjab</td>
+    </tr>
+    <tr>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4272</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">khushiii</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">6080****</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">BCA-I</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">190</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">haryana</td>
+</tr>
+    <tr>
+         <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4277</td>
+          <td style="border: 1px solid #000000; padding: 8px; text-align: left;">SAURAV</td>
+         <td style="border: 1px solid #000000; padding: 8px; text-align: left;">8080****</td>
+         <td style="border: 1px solid #000000; padding: 8px; text-align: left;">BCA-I</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">250</td>
+         <td style="border: 1px solid #000000; padding: 8px; text-align: left;">chandigarh</td>
+      </tr>
+    </table>
+      <h2>Query</h2>
+      <p>SELECT Name, PhoneNo FROM student WHERE</p>
+      <p>PhoneNo LIKE "7%";</p>
+      <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+        <tr>
+            <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Name</th>
+            <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">PhoneNo</th>
+            
+         </tr>  
+         <tr>
+          <td style="border: 1px solid #000000; padding: 8px; text-align: left;">muskan</td>
+          <td style="border: 1px solid #000000; padding: 8px; text-align: left;">80041***</td>
+         </tr>
+         <tr>
+          <td style="border: 1px solid #000000; padding: 8px; text-align: left;">saurav</td>
+          <td style="border: 1px solid #000000; padding: 8px; text-align: left;">8080***</td>
+         </tr>
+     </table>
+
+
+
+
+    </body>
+</html>

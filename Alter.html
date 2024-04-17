@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>alter</title>
+
+</head>
+<body>
+    <section class="home" id="home">
+        <h1 style="font-size: 40px; background-color:rgb(172, 209, 253) ;">Alter</h1>
+        <h1>Adding new columns to tables</h1>
+        <p>To add a new column to an existing table in MySQL, you can use the ALTER TABLE statement followed by the ADD COLUMN clause. Here's the basic syntax:</p>
+        <h2>Syntax</h2>
+        <p>ALTER TABLE table_name ADD COLUMN</p>
+        <p>column_name datatype [constraints];</p>
+        <h2>Query</h2>
+        <p>ALTER TABLE student ADD COLUMN DOB date;</p>
+        <p>Query OK, 0 rows affected (0.13 sec)</p>
+        <p>Records: 0 Duplicates: 0 Warnings: 0</p>
+        <p>DESC student;</p>
+        <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+            <tr>
+                <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Field</th>
+                <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Type</th>
+                <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Null</th>
+                <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Key</th>
+                <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Default</th>
+                <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Extra</th>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">RollNo</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">int</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">NO</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">Pri</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">NULL</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">   </td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">Name</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">varchar(50)</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">YES</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;"></td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">NULL</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;"></td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">PhoneNo</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">varchar(10)</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">YES</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;"></td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">NULL</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">  </td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">DOB</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">Date</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">YES</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;"></td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">NULL</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">  </td>
+            </tr>
+        </table>
+        <h1>Droping Columns From Tables</h1>
+        <p>To drop (remove) a column from an existing table in MySQL, you use the ALTER TABLE statement with the DROP COLUMN clause. Here's the basic syntax:</p>
+        <h2>symtax</h2>
+        <p>ALTER TABLE table_name DROP COLUMN</p>
+        <p>column_name;</p>
+        <h2>Query</h2>
+        <p>ALTER TABLE student DROP COLUMN DOB;</p>
+        <p>Query OK, 0 rows affected (0.17 sec)</p>
+        <p>Records: 0 Duplicates: 0 Warnings: 0</p>
+        <p>DESC student;</p>
+        <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+            <tr>
+                <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Field</th>
+                <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Type</th>
+                <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Null</th>
+                <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Key</th>
+                <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Default</th>
+                <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Extra</th>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">RollNo</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">int</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">NO</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">Pri</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">NULL</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">   </td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">Name</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">varchar(50)</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">YES</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;"></td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">NULL</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;"></td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">PhoneNo</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">varchar(10)</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">YES</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;"></td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">NULL</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">  </td>
+            </tr>
+            </table>
+            <h1>Updating Columns of Tables</h1>
+            <p>To update (modify) a column in an existing table in MySQL, you can use the ALTER TABLE statement with the MODIFY COLUMN clause. Here's the basic syntax:</p>
+            <h2>Syntax</h2>
+            <p>ALTER TABLE table_name MODIFY COLUMN</p>
+            <p>column_name new_datatype [new_constraints];</p>
+            <h2>Query</h2>
+            <p>DESC student;</p>
+            <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+                <tr>
+                    <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Field</th>
+                    <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Type</th>
+                    <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Null</th>
+                    <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Key</th>
+                    <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Default</th>
+                    <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Extra</th>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">RollNo</td>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">int</td>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">NO</td>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">Pri</td>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">NULL</td>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">   </td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">Name</td>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">varchar(50)</td>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">YES</td>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;"></td>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">NULL</td>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;"></td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">PhoneNo</td>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">varchar(10)</td>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">YES</td>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;"></td>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">NULL</td>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">  </td>
+                </tr>
+                </table>
+        <p>ALTER TABLE student MODIFY COLUMN RollNo</p>
+        <p>varchar(10);
+        </p>
+        <p>Query OK, 0 rows affected (0.10 sec)</p>
+        <p>Records: 0 Duplicates: 0 Warnings: 0
+        </p>
+        <p>DESC student;</p>
+        <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+            <tr>
+                <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Field</th>
+                <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Type</th>
+                <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Null</th>
+                <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Key</th>
+                <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Default</th>
+                <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Extra</th>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">RollNo</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">varchar(10)</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">NO</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">Pri</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">NULL</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">   </td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">Name</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">varchar(50)</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">YES</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;"></td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">NULL</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;"></td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">PhoneNo</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">varchar(10)</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">YES</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;"></td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">NULL</td>
+                <td style="border: 1px solid #000000; padding: 8px; text-align: left;">  </td>
+            </tr>
+            </table>
+
+
+
+
+
+
+
+
+
+
+    </section>
+</body>
+</html>

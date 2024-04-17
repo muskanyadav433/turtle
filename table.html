@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tables</title>
+    <style>
+        .home{
+            background: url(logo/back.avif);
+            background-size: contain;
+            /* position: relative;
+       height: 100vh;
+       width: 100%;
+       opacity: 85%;
+    background-size: cover;
+    background-position: center;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 1rem;
+    align-items: center ;
+        } */
+    }
+    </style>
+
+</head>
+<body>
+    <section class="home" id="home">
+        <h1 style="font-size: 40px; background-color:rgb(172, 209, 253) ;">Table</h1>
+        <h1>Creating table</h1>
+        <p>To create a table in MySQL, you can use the following SQL statement:</p>
+        <h2>syntax</h2>
+        <p>CREATE TABLE table_name ( column1 datatype constraints, column2 datatype constraints, ... );</p>
+        <P> table_name:</P>
+        <p> This is the name of the table you want to create.  </p>
+        <p>(column1, column2, ...): </p>
+        <P>These are the names of the columns in the table. </P>
+        <p>datatype: </p>
+        <p>Specifies the data type for each column. Examples include INT, VARCHAR, DATE, etc. </p>
+        <p>constraints:  </p>
+        <p> Optional constraints that enforce rules or conditions on the data in the columns, such as PRIMARY KEY, NOT NULL, UNIQUE, FOREIGN KEY, etc. </p>
+        <p>Here's an example of creating a simple table named student with three columns:</p>
+        <h2>Query</h2>
+        <p> USE school; </p>
+        <p>Database changed</p>
+        <p>CREATE TABLE student ( RollNo INT PRIMARY KEY, Name VARCHAR(50), PhoneNo VARCHAR(10) );</p>
+        <P>Query OK, 0 rows affected (0.16 sec)</P>
+
+        <h1>Showing tables</h1>
+        <p>To show the list of tables in a particular database of MySQL, you can use the SHOW TABLES; command. Here's how you would do it:</p>
+        <h2>Syntax</h2>
+        <p>SHOW TABLES;</p>
+        <h2>Query</h2>
+        <p>USE school;</p>
+        <p>Database changed</p>
+        <p>SHOW TABLES;</p>
+        
+
+        <table style="width: 25%; border-collapse: collapse; border: 1px solid #000000;">
+            <tr>
+                <th style="background-color: #f4f7bd;font-size: 20px; border: 1px solid #000000; padding: 8px; text-align: left;">Tables_in_school</th>
+               
+            </tr>
+            <tr>
+                <td style="background-color: rgb(194, 244, 244);font-size: 17px;border: 1px solid #000000; padding: 8px; text-align: left;">student</td>
+               
+            </tr>
+            <tr>
+                <td style="background-color: rgb(194, 244, 244);font-size: 17px;border: 1px solid #000000; padding: 8px; text-align: left;">course</td>
+                
+            </tr>
+    
+
+            <h1>Describe table</h1>
+            <p>In MySQL, you can use the DESCRIBE or DESC command to display information about the structure of a table, including column names, data types, and constraints. Both DESCRIBE and DESC are equivalent and can be used interchangeably. Here's how you would use them:</p>
+            <h2>Syntax</h2>
+            <p>DESCRIBE table_name;</p>
+            <p>Or            </p>
+            <p>DESC table_name;</p>
+            <h2>Query</h2>
+            <p>USE school;</p>
+            <p>Database changed
+            </p>
+            <p>DESC student;</p>
+    
+            <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+                <tr>
+                    <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Field</th>
+                    <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Type</th>
+                    <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Null</th>
+                    <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Key</th>
+                    <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Default</th>
+                    <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Extra</th>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">RollNo</td>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">int</td>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">NO</td>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">Pri</td>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">NULL</td>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">   </td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">Name</td>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">varchar(50)</td>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">YES</td>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;"></td>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">NULL</td>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;"></td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">PhoneNo</td>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">varchar(10)</td>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">YES</td>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;"></td>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">NULL</td>
+                    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">  </td>
+                </tr>
+            </table>
+    <h1>Droping table</h1>
+        <p>To drop a table in MySQL, you use the DROP TABLE statement followed by the name of the table you want to delete. Here's the basic syntax:</p>
+            <h2>syntax</h2>
+            <p>DROP TABLE table_name;</p>
+            <h2>Query</h2>
+            <p>USE school;</p>
+            <p>Database changed</p>
+            <p>SHOW TABLES;</p>
+
+
+            <table style="width: 25%; border-collapse: collapse; border: 1px solid #000000;">
+                <tr>
+                    <th style="background-color: #f4f7bd;font-size: 30px; border: 1px solid #000000; padding: 8px; text-align: left;">Tables_in_school</th>
+                   
+                </tr>
+                <tr>
+                    <td style="background-color: rgb(194, 244, 244);font-size: 25px;border: 1px solid #000000; padding: 8px; text-align: left;">student</td>
+                   
+                </tr>
+                <tr>
+                    <td style="background-color: rgb(194, 244, 244);font-size: 25px;border: 1px solid #000000; padding: 8px; text-align: left;">course</td>
+                    
+                </tr>
+                <tr>
+                    <td style="background-color: rgb(194, 244, 244);font-size: 25px;border: 1px solid #000000; padding: 8px; text-align: left;">temporary</td>
+                   
+                </tr>
+            </table>
+
+            <p>DROP TABLE temporary;</p>
+            <p>Query OK, 0 rows affected (0.08 sec)</p>
+    </section>
+
+</body>
+</html>

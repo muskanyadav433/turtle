@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction Management</title>
+</head>
+<body>
+    <h1 style="font-size: 40px; background-color:rgb(172, 209, 253) ;">Transaction Management</h1>
+    <h1>Introduction</h1>
+    <p>Transaction management in MySQL allows you to group multiple SQL statements into a single unit of work, ensuring that either all the statements are executed successfully or none of them are applied. This helps maintain data integrity and consistency within the database. MySQL supports transaction management using the START TRANSACTION, COMMIT, and ROLLBACK statements.</p>
+    <h2>Starting New Transaction:</h2>
+    <p>START TRANSACTION;</p>
+    <p>This statement marks the beginning of a transaction. It signifies the start of a sequence of SQL statements that will be treated as a single unit of work.</p>
+    <h2>Commiting Changes in Transaction:</h2>
+    <p>COMMIT;</p>
+    <p>This statement permanently saves the changes made during the current transaction. Once committed, the changes become visible to other database sessions.</p>
+    <h2>Roll back changes in Transaction:</h2>
+    <p>ROLLBACK;</p>
+    <p>This statement rolls back (undoes) any changes made during the current transaction. It effectively cancels the transaction and restores the database to its state before the transaction began.</p>
+    <h1>Example of using Commit/Rollback</h1>
+    <p>Here's an example of how you might use these statements together:</p>
+    <p>Example Table : studen</p>
+
+    <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+     <tr>
+         <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">RollNo</th>
+         <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Name</th>
+         <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">PhoneNo</th>
+         <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Class</th>
+         <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Marks</th>
+         <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">City</th>
+     </tr>
+     <tr>
+             <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4286</td>
+             <td style="border: 1px solid #000000; padding: 8px; text-align: left;">Muskan</td>
+             <td style="border: 1px solid #000000; padding: 8px; text-align: left;">80041****</td>
+             <td style="border: 1px solid #000000; padding: 8px; text-align: left;">BCA-I</td>
+             <td style="border: 1px solid #000000; padding: 8px; text-align: left;">296</td>
+             <td style="border: 1px solid #000000; padding: 8px; text-align: left;">chandigarh</td>
+     </tr>
+     <tr>
+         <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4267</td>
+         <td style="border: 1px solid #000000; padding: 8px; text-align: left;">awaz</td>
+         <td style="border: 1px solid #000000; padding: 8px; text-align: left;">7080***</td>
+         <td style="border: 1px solid #000000; padding: 8px; text-align: left;">BCA-I</td>
+         <td style="border: 1px solid #000000; padding: 8px; text-align: left;">240</td>
+         <td style="border: 1px solid #000000; padding: 8px; text-align: left;">punjab</td>
+ </tr>
+ <tr>
+     <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4272</td>
+     <td style="border: 1px solid #000000; padding: 8px; text-align: left;">khushiii</td>
+     <td style="border: 1px solid #000000; padding: 8px; text-align: left;">6080****</td>
+     <td style="border: 1px solid #000000; padding: 8px; text-align: left;">BCA-I</td>
+     <td style="border: 1px solid #000000; padding: 8px; text-align: left;">190</td>
+     <td style="border: 1px solid #000000; padding: 8px; text-align: left;">haryana</td>
+</tr>
+ <tr>
+      <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4277</td>
+       <td style="border: 1px solid #000000; padding: 8px; text-align: left;">SAURAV</td>
+      <td style="border: 1px solid #000000; padding: 8px; text-align: left;">8080****</td>
+      <td style="border: 1px solid #000000; padding: 8px; text-align: left;">BCA-I</td>
+     <td style="border: 1px solid #000000; padding: 8px; text-align: left;">284</td>
+      <td style="border: 1px solid #000000; padding: 8px; text-align: left;">chandigarh</td>
+   </tr>
+ </table>
+ <h2>Query</h2>
+ <p>START TRANSACTION;</p>
+ <p>UPDATE student SET marks = marks + 10 where marks < 290;</p>
+ <p>COMMIT;</p>
+ <p>ROLLBACK;</p>
+ <p>SELECT * FROM student;</p>
+ <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+    <tr>
+        <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">RollNo</th>
+        <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Name</th>
+        <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">PhoneNo</th>
+        <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Class</th>
+        <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Marks</th>
+        <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">City</th>
+    </tr>
+    <tr>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4286</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">Muskan</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">80041****</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">BCA-I</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">296</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">chandigarh</td>
+    </tr>
+    <tr>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4267</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">awaz</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">7080***</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">BCA-I</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">250</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">punjab</td>
+</tr>
+<tr>
+    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4272</td>
+    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">khushiii</td>
+    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">6080****</td>
+    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">BCA-I</td>
+    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">200</td>
+    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">haryana</td>
+</tr>
+<tr>
+     <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4277</td>
+      <td style="border: 1px solid #000000; padding: 8px; text-align: left;">SAURAV</td>
+     <td style="border: 1px solid #000000; padding: 8px; text-align: left;">8080****</td>
+     <td style="border: 1px solid #000000; padding: 8px; text-align: left;">BCA-I</td>
+    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">294</td>
+     <td style="border: 1px solid #000000; padding: 8px; text-align: left;">chandigarh</td>
+  </tr>
+</table>
+
+ <p>START TRANSACTION;</p>
+ <p>UPDATE student SET marks = marks + 10 where marks < 290;
+ </p>
+ <p>ROLLBACK;</p>
+ <p>COMMIT;</p>
+ <p>SELECT * FROM student;</p>
+ <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+    <tr>
+        <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">RollNo</th>
+        <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Name</th>
+        <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">PhoneNo</th>
+        <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Class</th>
+        <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">Marks</th>
+        <th style="background-color: #b6e7f7; border: 2px solid #000000; padding: 8px; text-align: left;">City</th>
+    </tr>
+    <tr>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4286</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">Muskan</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">80041****</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">BCA-I</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">296</td>
+            <td style="border: 1px solid #000000; padding: 8px; text-align: left;">chandigarh</td>
+    </tr>
+    <tr>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4267</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">awaz</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">7080***</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">BCA-I</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">260</td>
+        <td style="border: 1px solid #000000; padding: 8px; text-align: left;">punjab</td>
+</tr>
+<tr>
+    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4272</td>
+    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">khushiii</td>
+    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">6080****</td>
+    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">BCA-I</td>
+    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">210</td>
+    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">haryana</td>
+</tr>
+<tr>
+     <td style="border: 1px solid #000000; padding: 8px; text-align: left;">4277</td>
+      <td style="border: 1px solid #000000; padding: 8px; text-align: left;">SAURAV</td>
+     <td style="border: 1px solid #000000; padding: 8px; text-align: left;">8080****</td>
+     <td style="border: 1px solid #000000; padding: 8px; text-align: left;">BCA-I</td>
+    <td style="border: 1px solid #000000; padding: 8px; text-align: left;">294</td>
+     <td style="border: 1px solid #000000; padding: 8px; text-align: left;">chandigarh</td>
+  </tr>
+</table>
+</body>
+</html>

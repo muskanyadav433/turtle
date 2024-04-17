@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Database</title>
+    <link rel="stylesheet"
+    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+<style>
+    .home {
+        background: url(logo/back.avif);
+        background-size: contain;
+        /* background-size: 1000px;
+        background-repeat: no-repeat; */
+    }
+    p{
+        font: bold;
+        font-size: 20px;
+    }
+    h1{
+        font-size: 27px;
+        background-color: rgb(255, 255, 206);
+    }
+    
+    
+
+
+</style>
+
+</head>
+<body>
+    <section class="home" id="home">
+    <h1 style="font-size: 40px; background-color: rgb(172, 209, 253);">Database</h1>
+    <h1>creating database</h1>
+    <p>To create a new database in MySQL, you can use the CREATE DATABASE statement followed by the name of the database you want to create. Here's the basic syntax:</p>
+    <h2>Syntax</h2>
+    <p>CREATE DATABASE database_name;</p>
+    <p>Replace database_name with the name you want to give to your new database. Here's an example of creating a database named School:</p>
+    <h2>Query</h2>
+    <p>CREATE DATABASE school;</p>
+
+    <p> Query OK, 1 row affected (0.02 sec)</p>
+    /* show data base*/
+    <h1>Showing database</h1>
+    <P>To show the list of databases in MySQL, you can use the SHOW DATABASES; command. Here's how you would do it:</P>
+    <h2>Query</h2>
+    <P>Show database;</P>
+    <!-- <table border="1" >
+        <tr>
+            <th>Database</th>
+            
+        </tr>
+        <tr>
+            <td>information_schema</td>
+            
+        </tr>
+        <tr>
+            <td>mysql</td>
+            
+        </tr>
+        <tr>
+            <td>performance_schema</td>
+            
+        </tr>
+        <tr>
+            <td>school</td>
+            
+        </tr>
+        <tr>
+            <td>sys</td>
+            
+        </tr>
+    </table> -->
+    <table style="width: 25%; border-collapse: collapse; border: 1px solid #000000;">
+        <tr>
+            <th style="background-color: #f4f7bd;font-size: 30px; border: 1px solid #000000; padding: 8px; text-align: left;">Database</th>
+           
+        </tr>
+        <tr>
+            <td style="background-color: rgb(194, 244, 244);font-size: 25px;border: 1px solid #000000; padding: 8px; text-align: left;">information_schema</td>
+           
+        </tr>
+        <tr>
+            <td style="background-color: rgb(194, 244, 244);font-size: 25px;border: 1px solid #000000; padding: 8px; text-align: left;">mysql</td>
+            
+        </tr>
+        <tr>
+            <td style="background-color: rgb(194, 244, 244);font-size: 25px;border: 1px solid #000000; padding: 8px; text-align: left;">performance_schema</td>
+           
+        </tr>
+        <tr>
+            <td style="background-color: rgb(194, 244, 244);font-size: 25px;border: 1px solid #000000; padding: 8px; text-align: left;">school</td>
+            
+        </tr>
+        <tr>
+            <td style="background-color: rgb(194, 244, 244);font-size: 25px;border: 1px solid #000000; padding: 8px; text-align: left;">sys</td>
+            
+        </tr>
+    </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <p>Note:- We have created database named school rest all are created by default.</p>
+    <h1>Dropping database</h1>
+    <p>To drop (delete) a database in MySQL, you can use the following SQL statement:</p>
+    <h2>Syntax</h2>
+    <p>DROP DATABASE database_name;</p>
+    <p>Replace database_name with the name of the database you want to delete. Here's an example of deleting a database named school:</p>
+    <h2>Query</h2>
+    <p>DROP DATABASE school; </p>
+    <p>Query OK, 0 rows affected (0.14 sec)</p>
+    <p>SHOW DATABASES;</p>
+    <table style="width: 25%; border-collapse: collapse; border: 1px solid #000000;">
+        <tr>
+            <th style="background-color: #f4f7bd;font-size: 30px; border: 1px solid #000000; padding: 8px; text-align: left;">Database</th>
+           
+        </tr>
+        <tr>
+            <td style="background-color: rgb(194, 244, 244);font-size: 25px;border: 1px solid #000000; padding: 8px; text-align: left;">information_schema</td>
+           
+        </tr>
+        <tr>
+            <td style="background-color: rgb(194, 244, 244);font-size: 25px;border: 1px solid #000000; padding: 8px; text-align: left;">mysql</td>
+            
+        </tr>
+        <tr>
+            <td style="background-color: rgb(194, 244, 244);font-size: 25px;border: 1px solid #000000; padding: 8px; text-align: left;">performance_schema</td>
+           
+        </tr>
+       
+        <tr>
+            <td style="background-color: rgb(194, 244, 244);font-size: 25px;border: 1px solid #000000; padding: 8px; text-align: left;">sys</td>
+            
+        </tr>
+    </table>
+    <h1>using database</h1>
+    <p>To use a database in MySQL, you can use the following SQL statement:</p>
+    <h2>syntax</h2>
+    <p>USE database_name;</p>
+    <p>Replace database_name with the name of the database you want to use(make sure it is available). Here's an example of using a database named school:</p>
+    <h2>query</h2>
+    <p>show databases;</p>
+    <table style="width: 25%; border-collapse: collapse; border: 1px solid #000000;">
+        <tr>
+            <th style="background-color: #f4f7bd;font-size: 30px; border: 1px solid #000000; padding: 8px; text-align: left;">Database</th>
+           
+        </tr>
+        <tr>
+            <td style="background-color: rgb(194, 244, 244);font-size: 25px;border: 1px solid #000000; padding: 8px; text-align: left;">information_schema</td>
+           
+        </tr>
+        <tr>
+            <td style="background-color: rgb(194, 244, 244);font-size: 25px;border: 1px solid #000000; padding: 8px; text-align: left;">mysql</td>
+            
+        </tr>
+        <tr>
+            <td style="background-color: rgb(194, 244, 244);font-size: 25px;border: 1px solid #000000; padding: 8px; text-align: left;">performance_schema</td>
+           
+        </tr>
+        <tr>
+            <td style="background-color: rgb(194, 244, 244);font-size: 25px;border: 1px solid #000000; padding: 8px; text-align: left;">school</td>
+            
+        </tr>
+        <tr>
+            <td style="background-color: rgb(194, 244, 244);font-size: 25px;border: 1px solid #000000; padding: 8px; text-align: left;">sys</td>
+            
+        </tr>
+    </table>
+    <p>USE school;</p>
+    <p>Database changed</p>
+
+
+</section>
+</body>
+</html>

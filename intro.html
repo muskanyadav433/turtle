@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>introduction</title>
+     
+     <link rel="stylesheet"
+     href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+<style>
+    .home {
+        /* background-color: rgb(248, 233, 211); */
+        background: url(logo/back.avif);
+        background-size: contain;
+    }
+    h1{
+        background-color: rgb(181, 247, 237);
+    }
+    h6 {
+        font-size: 18px ;
+        background-color: rgb(164, 225, 243);
+        margin-right: 10px;
+    }
+    p {
+        /* background-color: rgb(245, 243, 200); */
+        font: 700;
+        font-size: 20px;
+    }
+</style>
+</head>
+<body>
+    <section class="home" id="home">
+    <div>
+        <h1 style="font-size: 40PX; background-color:rgb(172, 209, 253) ;">Basics of MySQL</h1>
+   <h1>What is SQL?</h1> 
+    <P>SQL, or Structured Query Language, is a domain-specific language used in programming and designed for managing and manipulating data held in relational database management systems (RDBMS). It's one of the most widely used languages for interacting with databases and plays a crucial role in data management across various industries.</P>
+
+<h6>Here's a high-level introduction to SQL:</h6>
+
+<h6>Purpose:</h6>
+<p>SQL is used to perform tasks such as storing, retrieving, updating, and deleting data in relational databases. It provides a standardized way to communicate with databases, allowing users to define, manipulate, and query data efficiently.</p>
+
+<h6>Components:</h6>
+
+<p>Data Definition Language (DDL): DDL is used to define the structure and schema of the database objects. It includes commands like CREATE, ALTER, DROP, and TRUNCATE.</p>
+<p>Data Manipulation Language (DML): DML is used to manipulate the data stored in the database. It includes commands like SELECT, INSERT, UPDATE, and DELETE.</p>
+<p>Data Query Language (DQL): DQL is used to retrieve data from the database. The primary command for this is SELECT.</p>
+<p>Data Control Language (DCL): DCL is used to control access to the database objects. It includes commands like GRANT and REVOKE.</p>
+<p>Transaction Control Language (TCL): TCL is used to manage transactions within the database. It includes commands like COMMIT, ROLLBACK, and SAVEPOINT. </p>
+<h6>Data Types:</h6>
+<p>SQL supports various data types, including numeric types (e.g., INT, DECIMAL), character types (e.g., VARCHAR, CHAR), date/time types (e.g., DATE, TIMESTAMP), and more. These data types define the kind of data that can be stored in each column of a table.</p>
+
+<h6>Constraints:</h6>
+<p>SQL allows the definition of constraints on tables to enforce data integrity. Common constraints include PRIMARY KEY, FOREIGN KEY, UNIQUE, NOT NULL, and CHECK constraints.</p>
+
+<h6>Queries:</h6>
+<p>SQL queries are used to retrieve specific information from a database. The SELECT statement is the most commonly used SQL command for querying data. Queries can filter, sort, aggregate, and manipulate data according to specified criteria.</p>
+
+<h6>Joins:</h6>
+<p>SQL supports different types of joins (e.g., INNER JOIN, LEFT JOIN, RIGHT JOIN, FULL JOIN) to combine rows from multiple tables based on related columns.</p>
+
+<h6>Aggregation Functions:</h6>
+<p>SQL provides aggregate functions (e.g., SUM, AVG, MIN, MAX, COUNT) for performing calculations on sets of data. These functions are often used with the GROUP BY clause to aggregate data based on certain criteria.</p>
+
+<p>SQL is a versatile language used by database administrators, software developers, data analysts, and data scientists to manage and analyze data effectively. Learning SQL is essential for anyone working with databases or handling large volumes of data.
+</P>
+<h1>Data types in SQL</h1>
+<p>In SQL, data types are used to specify the type of data that can be stored in a column of a table. Each column in a table must have a specific data type, which defines the kind of values that can be inserted into that column. SQL supports a wide range of data types, each designed to accommodate different types of data and optimize storage efficiency.
+</p>
+<h1>Common data types in SQL:</h1>
+<h6>CHAR(size)</h6>
+<p>A FIXED length string (can contain letters, numbers, and special characters). The size parameter specifies the column length in characters - can be from 0 to 255. Default is 1</p>
+<h6>VARCHAR(size)</h6>
+<p>A VARIABLE length string (can contain letters, numbers, and special characters). The size parameter specifies the maximum column length in characters - can be from 0 to 65535</p>
+<h6>TEXT(size)</h6>
+<p>Holds a string with a maximum length of 65,535 bytes</p>
+<h6>TINYINT(size)</h6>
+<p>A very small integer. Signed range is from -128 to 127. Unsigned range is from 0 to 255. The size parameter specifies the maximum display width (which is 255)</p>
+<h6>BOOL</h6>
+<p>Zero is considered as false, nonzero values are considered as true.</p>
+<h6>INT(size)</h6>
+<p>A medium integer. Signed range is from -2147483648 to 2147483647. Unsigned range is from 0 to 4294967295. The size parameter specifies the maximum display width (which is 255)</p>
+<h6>BIGINT(size)</h6>
+<p>A large integer. Signed range is from -9223372036854775808 to 9223372036854775807. Unsigned range is from 0 to 18446744073709551615. The size parameter specifies the maximum display width (which is 255)</p>
+<h6>FLOAT(p)</h6>
+<p>A floating point number. MySQL uses the p value to determine whether to use FLOAT or DOUBLE for the resulting data type. If p is from 0 to 24, the data type becomes FLOAT(). If p is from 25 to 53, the data type becomes DOUBLE()</p>
+<h6>DOUBLE(size, d)</h6>
+<p>A  normal-size floating point number. The total number of digits is specified in size. The number of digits after the decimal point is specified in the d parameter</p>
+<h6>DECIMAL(size, d)</h6>
+<p>An exact fixed-point number. The total number of digits is specified in size. The number of digits after the decimal point is specified in the d parameter. The maximum number for size is 65. The maximum number for d is 30. The default value for size is 10. The default value for d is 0.</p>
+<h6>DATE</h6>
+<p>A date. Format: YYYY-MM-DD. The supported range is from '1000-01-01' to '9999-12-31'</p>
+<h6>YEAR</h6>
+<p>A year in four-digit format. Values allowed in four-digit format: 1901 to 2155, and 0000. MySQL 8.0 does not support year in two-digit format.</p>
+
+</div>
+</section>
+
+</body>
+</html>
